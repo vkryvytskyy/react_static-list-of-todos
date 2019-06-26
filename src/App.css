@@ -1,0 +1,24 @@
+.App {
+  margin: 5px;
+  border-radius: 12px 12px 12px 12px;
+-moz-border-radius: 12px 12px 12px 12px;
+-webkit-border-radius: 12px 12px 12px 12px;
+border: 4px double #b0b0b0;
+}
+
+.TodoItem {
+  background: #cdcdcd;
+  text-align: center
+}
+
+.tableHead {
+  background: #695f8d;
+}
+
+.itemActive {
+  background: #c46244;
+}
+
+.itemCompleted {
+  background: #75b685;
+}
