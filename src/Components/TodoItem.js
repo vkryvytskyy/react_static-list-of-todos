@@ -1,22 +1,28 @@
 import React from 'react'
 import User from '../Components/User'
+import { users } from '../Services/users'
 
 function TodoItem(props) {
-  const newTodos = [...props.todos].map(todo => {
     return (
     <tr className="TodoItem">
-      <td className="id">{todo.id}</td>
-      <td className="title">{todo.title}</td>
-      <td className={todo.completed ? 'itemCompleted' : 'itemActive'}>{todo.completed ? 'completed' : 'active'}</td>
-      <User userId={todo.userId} />
+      <td className="id">{props.todoData.id}</td>
+      <td className="title">{props.todoData.title}</td>
+      <td className={props.todoData.completed ? 'itemCompleted' : 'itemActive'}>{props.todoData.completed ? 'completed' : 'active'}</td>
+        {
+          users
+            .filter(user => {
+              return user.id === props.todoData.userId
+            })
+          .map((user, index) => {
+          return (
+            <User userData={user} key={index}/>
+        )
+      })}
+      
     </tr>
       
     )
-  })
 
-  return (
-    newTodos
-  )
 }
 
 export default TodoItem
